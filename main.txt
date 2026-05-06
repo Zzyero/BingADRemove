@@ -3,7 +3,7 @@
 // @namespace    http://tampermonkey.net/
 // @version      1.0
 // @description  Revome FORM/form parameter in Bing Search
-// @author       zzyero
+// @author       zzyero Ciallo～(∠・ω<)⌒★ 
 // @match        https://cn.bing.com/search*
 // @run-at       document-start
 // @grant        none
