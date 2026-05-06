@@ -1,0 +1,34 @@
+// ==UserScript==
+// @name         BingADRemove
+// @namespace    http://tampermonkey.net/
+// @version      1.0
+// @description  Revome FORM/form parameter in Bing Search
+// @author       zzyero
+// @match        https://cn.bing.com/search*
+// @run-at       document-start
+// @grant        none
+// ==/UserScript==
+ 
+(function() {
+    'use strict';
+ 
+    const url = new URL(window.location.href);
+ 
+    if(url.searchParams.has('FORM')) {
+        url.searchParams.delete('FORM');
+        const cleanURL = url.toString();
+        if(window.location.href !== cleanURL) {
+            window.stop();
+            window.location.replace(cleanURL);
+        }
+    }
+ 
+    if(url.searchParams.has('form')) {
+        url.searchParams.delete('form');
+        const cleanURL = url.toString();
+        if(window.location.href !== cleanURL) {
+            window.stop();
+            window.location.replace(cleanURL);
+        }
+    }
+})();
